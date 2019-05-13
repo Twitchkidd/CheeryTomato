@@ -23,7 +23,7 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.header}>Cheery Tomato!</Text>
-        <Logo style={{ width: 50, height: 50 }} />
+        <Logo width={160} height={148} />
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
       </View>
