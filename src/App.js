@@ -7,7 +7,8 @@
  */
 
 import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View } from "react-native";
+import { Platform, StyleSheet, View, Text } from "react-native";
+import Logo from "./images/logo.svg";
 
 const instructions = Platform.select({
   ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
@@ -18,9 +19,11 @@ const instructions = Platform.select({
 
 export default class App extends Component {
   render() {
+    console.log(Logo);
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
+        <Text style={styles.header}>Cheery Tomato!</Text>
+        <Logo style={{ width: 50, height: 50 }} />
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
       </View>

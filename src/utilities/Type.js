@@ -1,7 +1,7 @@
-export const header = `
+export const headerFont = `
   fontFamily: 'RobotoSlab-Regular',
 `;
 
-export const text = `
+export const textFont = `
   fontFamily: 'RobotoMono-Regular',
 `;
