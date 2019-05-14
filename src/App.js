@@ -8,7 +8,7 @@
 
 import React, { Component } from "react";
 import { Platform, StyleSheet, View, Text } from "react-native";
-import Logo from "./images/logo.svg";
+import Logo from "./elements/Logo";
 
 const instructions = Platform.select({
   ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
@@ -23,7 +23,7 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.header}>Cheery Tomato!</Text>
-        <Logo width={160} height={148} />
+        <Logo />
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
       </View>
