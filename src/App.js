@@ -8,6 +8,7 @@
 
 import React, { Component } from "react";
 import { Platform, StyleSheet, View, Text } from "react-native";
+import Title from "./elements/Title";
 import Logo from "./elements/Logo";
 
 const instructions = Platform.select({
@@ -22,7 +23,7 @@ export default class App extends Component {
     console.log(Logo);
     return (
       <View style={styles.container}>
-        <Text style={styles.header}>Cheery Tomato!</Text>
+        <Title />
         <Logo />
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
