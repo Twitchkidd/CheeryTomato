@@ -1,35 +1,41 @@
 import React, { Component } from "react";
-import { View, Button } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
 import { applyStyleModifiers } from "styled-components-modifiers";
-import { pause, resume, disabled, disabledText, textFont } from "../utilities";
+import {
+  pause,
+  resume,
+  eigengrau,
+  disabled,
+  disabledText,
+  textFont
+} from "../utilities";
 
 const BUTTON_MODIFIERS = {
   pauseResume: () => `
-    background-color: \${pause};
+    background-color: ${pause};
   `,
   stopSettings: () => `
-    background-color: \${disabled};
+    background-color: ${resume};
   `
 };
-//Oh, that's such a good idea for some things but making two seperate components would be so much
-//simpler, like the style things should be their own sorta thing you can import into both, or just
-//NOT LIKE THIS. NOT LIKE THIS
-// Oh I've been avoiding export const styled but that's a thing! I've got to start again in the morning!
 
-const ButtonView = styled.View`
-  width: 120;
-  height: 120;
-  border-radius: 60;
+const ButtonView = styled.TouchableOpacity`
+  width: 110;
+  height: 110;
+  border-radius: 55;
   background-color: ${disabledText};
   margin: 15px;
+  margin-top: 5px;
   ${applyStyleModifiers(BUTTON_MODIFIERS)};
+  justify-content: center;
+  align-items: center;
 `;
 
-const ButtonButton = styled.Button`
-  color: ${disabledText};
-  background-color: ${resume};
+const ButtonText = styled.Text`
+  color: ${eigengrau};
   font-family: ${textFont};
+  font-size: 20px;
 `;
 
 class AppButton extends Component {
@@ -38,11 +44,16 @@ class AppButton extends Component {
   };
   render() {
     return (
-      <ButtonView>
-        <ButtonButton title='button' onPress={this.onPressLearnMore} />
+      <ButtonView
+        modifiers={this.props.modifiers}
+        onPress={this.onPressLearnMore}>
+        <ButtonText>BUTTON</ButtonText>
       </ButtonView>
     );
   }
 }
+
+// Does this need state? I think not. I think it needs to react to props and onPress run something a level up.
+// Also that Button.Text format looks pretty good here too!
 
 export default AppButton;

@@ -21,13 +21,21 @@ const ButtonBox = styled.View`
 `;
 
 export default class App extends Component {
+  state = {
+    rockin: true
+  };
   render() {
+    const { rockin } = this.state;
     return (
       <View style={styles.container}>
-        <Title />
         <Logo />
-        <Box content='3!' />
-        <Box content='25:00' />
+        <Title />
+        <Box rockin>
+          <Box.Text>25:00</Box.Text>
+        </Box>
+        <Box rockin>
+          <Box.Text>3!</Box.Text>
+        </Box>
         <ButtonBox>
           <Button modifiers='pauseResume' />
           <Button modifiers='stopSettings' />
