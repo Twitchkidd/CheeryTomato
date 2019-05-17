@@ -12,6 +12,7 @@ const StyledTitle = styled(Title)`
   font-size: 40;
   text-align: center;
   margin: 10px;
+  margin-top: 40px;
   font-family: ${headerFont};
 `;
 

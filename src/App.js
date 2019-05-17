@@ -7,26 +7,32 @@
  */
 
 import React, { Component } from "react";
-import { Platform, StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View } from "react-native";
+import styled from "styled-components/native";
 import Title from "./elements/Title";
 import Logo from "./elements/Logo";
+import Box from "./elements/Box";
+import Button from "./elements/Button";
+import Footer from "./elements/Footer";
 
-const instructions = Platform.select({
-  ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
-  android:
-    "Double tap R on your keyboard to reload,\n" +
-    "Shake or press menu button for dev menu"
-});
+const ButtonBox = styled.View`
+  flex: 1;
+  flex-direction: row;
+`;
 
 export default class App extends Component {
   render() {
-    console.log(Logo);
     return (
       <View style={styles.container}>
         <Title />
         <Logo />
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+        <Box content='3!' />
+        <Box content='25:00' />
+        <ButtonBox>
+          <Button modifiers='pauseResume' />
+          <Button modifiers='stopSettings' />
+        </ButtonBox>
+        <Footer content='~g' />
       </View>
     );
   }
@@ -38,17 +44,5 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#F5FCFF"
-  },
-  header: {
-    fontSize: 20,
-    textAlign: "center",
-    margin: 10,
-    fontFamily: "RobotoSlab-Regular"
-  },
-  instructions: {
-    textAlign: "center",
-    color: "#333333",
-    marginBottom: 5,
-    fontFamily: "RobotoMono-Regular"
   }
 });
